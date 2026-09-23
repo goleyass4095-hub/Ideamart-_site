@@ -1,0 +1,145 @@
+/* Ideamart Store - Custom Design Styles & Glassmorphism */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-surface: #101416;
+  --color-obsidian: #0A0B10;
+  --color-deep-navy: #121420;
+  --color-electric-blue: #00F0FF;
+  --color-bright-cyan: #38BDF8;
+  --color-neon-purple: #A855F7;
+  --color-magenta: #EC4899;
+  --glass-surface: rgba(18, 20, 32, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(0, 240, 255, 0.4);
+  --text-primary: #e0e3e6;
+  --text-muted: #c7c6cb;
+}
+
+* {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f11;
+}
+::-webkit-scrollbar-thumb {
+  background: #272a2d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bright-cyan);
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: var(--glass-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-panel:hover {
+  border-color: var(--glass-border-hover);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+/* Glow gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-electric-blue) 0%, var(--color-bright-cyan) 50%, var(--color-neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, var(--color-neon-purple) 0%, var(--color-magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient animated orbs */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.03);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+.animate-floating {
+  animation: floatAnimation 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  background: rgba(10, 11, 16, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Badge pill */
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
+/* Interactive transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Number display Persian styling */
+.persian-nums {
+  font-feature-settings: "ss01";
+}
